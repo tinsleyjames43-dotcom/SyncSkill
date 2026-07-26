@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import theme from "../styles/theme";
 
 export default function Dashboard() {
   return (
@@ -32,28 +33,61 @@ export default function Dashboard() {
         <Text style={styles.cardTitle}>People near your level</Text>
         <Text style={styles.cardText}>Find learners and mentors who match your interests.</Text>
       </View>
-
-      <Text style={styles.section}>Featured Projects 🚀</Text>
-      <View style={styles.card}>
-        <Text style={styles.cardTitle}>Join a team</Text>
-        <Text style={styles.cardText}>Collaborate and turn ideas into real products.</Text>
-      </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#0B1220", padding: 20 },
-  logo: { color: "white", fontSize: 24, fontWeight: "bold", marginTop: 35 },
-  title: { color: "white", fontSize: 32, fontWeight: "bold", marginTop: 15 },
-  subtitle: { color: "#94A3B8", fontSize: 16, marginTop: 10 },
-  hero: { backgroundColor: "#1E293B", padding: 22, borderRadius: 20, marginTop: 25 },
-  heroTitle: { color: "white", fontSize: 22, fontWeight: "bold" },
-  heroText: { color: "#CBD5E1", marginTop: 10 },
-  button: { backgroundColor: "#3B82F6", padding: 12, borderRadius: 12, marginTop: 18, alignItems: "center" },
-  buttonText: { color: "white", fontWeight: "bold" },
-  section: { color: "white", fontSize: 22, fontWeight: "bold", marginTop: 28 },
-  card: { backgroundColor: "#172033", padding: 18, borderRadius: 16, marginTop: 12 },
-  cardTitle: { color: "white", fontSize: 18, fontWeight: "bold" },
-  cardText: { color: "#94A3B8", marginTop: 8 },
+  container: {
+    flex: 1,
+    backgroundColor: theme.colors.background,
+    padding: theme.spacing.md,
+  },
+  logo: {
+    color: theme.colors.text,
+    fontSize: theme.typography.heading,
+    fontWeight: "bold",
+    marginTop: theme.spacing.lg,
+  },
+  title: {
+    color: theme.colors.text,
+    fontSize: theme.typography.title,
+    fontWeight: "bold",
+    marginTop: theme.spacing.sm,
+  },
+  subtitle: {
+    color: theme.colors.textMuted,
+    fontSize: theme.typography.body,
+    marginTop: theme.spacing.sm,
+  },
+  hero: {
+    backgroundColor: theme.colors.surfaceLight,
+    padding: theme.spacing.md,
+    borderRadius: theme.radius.large,
+    marginTop: theme.spacing.lg,
+  },
+  heroTitle: { color: theme.colors.text, fontSize: theme.typography.heading, fontWeight: "bold" },
+  heroText: { color: theme.colors.textMuted, marginTop: theme.spacing.sm },
+  button: {
+    backgroundColor: theme.colors.primary,
+    padding: theme.spacing.sm,
+    borderRadius: theme.radius.medium,
+    marginTop: theme.spacing.md,
+    alignItems: "center",
+  },
+  buttonText: { color: theme.colors.text, fontWeight: "bold" },
+  section: {
+    color: theme.colors.text,
+    fontSize: theme.typography.heading,
+    fontWeight: "bold",
+    marginTop: theme.spacing.lg,
+  },
+  card: {
+    backgroundColor: theme.colors.surface,
+    padding: theme.spacing.md,
+    borderRadius: theme.radius.medium,
+    marginTop: theme.spacing.sm,
+  },
+  cardTitle: { color: theme.colors.text, fontSize: theme.typography.body, fontWeight: "bold" },
+  cardText: { color: theme.colors.textMuted, marginTop: theme.spacing.xs },
 });
